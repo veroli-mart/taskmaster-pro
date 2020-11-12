@@ -153,10 +153,22 @@ $(".card .list-group").sortable({
   },
   update: function(event) {
     console.log("update", this);
+    // loop over current set of children in sortable list
+    $(this).children().each(function() {
+      var text = $(this)
+    .find("p")
+    .text()
+    .trim();
+
+  var date = $(this)
+    .find("span")
+    .text()
+    .trim();
+
+  console.log(text, date);
+    });
   }
 });
-
-
 
 
 // modal was triggered
